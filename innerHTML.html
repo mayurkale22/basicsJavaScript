@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script type="text/javascript">
+		var flag = false;
+			function change(){
+				
+				var field = document.getElementsByClassName('modify');
+							
+				console.log("clicked" + flag);
+				for(var i=0;i<field.length;i++) {
+					
+					if (!flag) {
+					field[i].innerHTML = "Management of Information Technology";
+					field[i].style.color = "red";
+					} else {
+					field[i].innerHTML = "Computer Science";
+					field[i].style.color = "black";
+					}
+				}
+				flag = !flag;
+			}
+		</script>
+
+		<style>
+		.modify {
+			display: inline;
+		}
+		</style>
+	</head>
+
+	<body>
+
+	<div> First Paragraph of <p class="modify">Computer Science</p></div>
+
+	<div> Second Paragraph of <p class="modify">Computer Science</p></div>
+
+	<div> Thrid Paragraph of <p class="modify">Computer Science</p></div>
+
+	<div> Forth Paragraph of <p class="modify">Computer Science</p></div>
+
+	<button onclick="change()"> change</button>
+	</body>
+</html>
