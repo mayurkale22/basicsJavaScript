@@ -1,0 +1,68 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script type="text/javascript">
+			var flag = true;
+			function add(){
+				var field = document.getElementById("container");
+				var btn = document.getElementById("btn");
+				
+				if (flag){
+					var imgElem = document.createElement("img");
+					imgElem.setAttribute("src","sample.png");
+					//imgElem.src = "sample.png";
+					field.appendChild(imgElem);
+
+					btn.innerHTML = "Remove";
+					btn.style.background = "red";
+					btn.style.borderColor = "red";
+					field.style.backgroundColor = "pink";
+				} else {
+
+					var imgfield = document.getElementsByTagName("img");
+					field.removeChild(imgfield[0]);
+					btn.innerHTML = "Add";
+					btn.style.background = "green";
+					btn.style.borderColor = "green";
+					field.style.backgroundColor = "lightgrey";
+				}
+				flag = !flag;
+			}
+
+		</script>
+
+		<style type="text/css">
+			.modify {
+				display: inline;
+			}
+			button {
+				margin-top: 20px;
+				color: white;
+            	border-radius: 4px;
+            	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            	background: rgb(28, 184, 65); /* this is a green */
+            	width: 120px;
+            	height: 30px;
+            	border-color: rgb(28, 184, 65);
+			}
+			img {
+				display: block;
+				height: 50px;
+				width: 50px;
+			}
+			div {
+    			background-color: lightgrey;
+   		 		padding: 25px;
+    			border: 1px solid navy;
+				}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="container">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+
+	<button onclick="add()" id="btn">Add</button>
+	</body>
+</html>
