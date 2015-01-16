@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script type="text/javascript">
+
+			function changeColor(){
+				var h3tag = document.getElementById("h3style");
+				h3tag.style.color = "red";
+				h3tag.firstChild.nodeValue = "Excited";
+			}
+
+			function changeAgain(){
+				var h3tag = document.getElementById("h3style");
+				h3tag.style.color = "grey";
+				h3tag.firstChild.nodeValue = "Bored";
+			}
+
+			function showPara() {
+
+				document.getElementById("para1").style.display=(document.formex.para_1.checked) ? "block" : "none";
+				document.getElementById("para2").style.display=(document.formex.para_2.checked) ? "block" : "none";
+				document.getElementById("para3").style.display=(document.formex.para_3.checked) ? "block" : "none";
+				document.getElementById("para4").style.display=(document.formex.para_4.checked) ? "block" : "none";
+
+			}
+			
+
+		</script>
+
+		<style>
+		.modify {
+			display: inline;
+		}
+		#h3style {
+			color: grey;
+		}
+
+		#para1,#para2,#para3,#para4 {
+			display: none;
+		}
+		</style>
+	</head>
+
+	<body>
+		<h3 id="h3style" onMouseOver="changeColor()" onMouseOut="changeAgain()">Bored</h3>
+
+		<form name="formex">
+
+			<input type="checkbox" name="para_1" onClick="showPara();" />1 Paragraph<br />
+			<input type="checkbox" name="para_2" onClick="showPara();" />2 Paragraph<br />
+			<input type="checkbox" name="para_3" onClick="showPara();" />3 Paragraph<br />
+			<input type="checkbox" name="para_4" onClick="showPara();" />4 Paragraph<br />
+		</form>
+
+		<div id="para1"> First Paragraph of Computer Science</div>
+		<div id="para2"> Second Paragraph of Computer Science</div>
+		<div id="para3"> Thrid Paragraph of Computer Science</div>
+		<div id="para4"> Forth Paragraph of Computer Science</div>
+
+
+	
+	</body>
+</html>
