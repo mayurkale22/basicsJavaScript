@@ -3,11 +3,15 @@
 	<head>
 		<script type="text/javascript">
 
-		document.write("<H1>Closure</H1>");
+		function superH1() {
+			var dom = document.getElementById("header");
+			var counter = 0;
 
-		document.write("1. Functions can be defined inside another function."
-					+ "<br\>2. The scope that an inner function enjoys continues even after the "
-					+ "parent functions have returned.<br\>3. This is called closure.");
+				function step(){
+					alert(counter);
+				}
+			setTimeout(step,1000);	
+		}
 
 		</script>
 		<style type="text/css">
@@ -23,6 +27,13 @@
 		</style>
 	</head>
 
-	<body>
+	<body onLoad="superH1()">
+		<h1 id ="header">Closure</h1>
+
+		<ui>
+			<li>1. Functions can be defined inside another function.</li>
+			<li>2. The scope that an inner function enjoys continues even after the parent functions have returned.</li>
+			<li>3. This is called closure.</li>
+		</ui>
 	</body>
 </html>
