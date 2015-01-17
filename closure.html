@@ -5,12 +5,35 @@
 
 		function superH1() {
 			var dom = document.getElementById("header");
-			var counter = 0;
+			var counter = 1;
 
 				function step(){
-					alert(counter);
+					var h = counter.toString(16);
+					var arr = ['F','F',h,'B','0',h];
+
+
+					var colorCode = shuffle(arr);
+
+					dom.style.color = "#" +colorCode;
+
+					if (counter < 50) {
+						counter +=1;
+						setTimeout(step,500);
+					}
 				}
-			setTimeout(step,1000);	
+			setTimeout(step,500);
+		}
+
+		function shuffle(arr) {
+				var len = arr.length;
+				var temp = [];
+ 
+				for (var i = 0; i < len; i++) {
+					Math.random() >= 0.5 ? temp.push(arr[i]) : temp.unshift(arr[i]);
+				}
+
+   				var colorCode = temp.toString().replace(/,/g,"");
+   				return colorCode;
 		}
 
 		</script>
